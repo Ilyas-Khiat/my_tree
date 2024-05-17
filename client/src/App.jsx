@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
 import Home from './Components/Home'
-import FamilyTreePage from './Components/familytree/FamilyTreePage'
+import FamilyDashboard from './Components/FAMILY_DASHBOARD'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Route path='/home' element={<Home />}></Route>
         <Route path = "/signup" element={<Signup />}></Route>
         <Route path = "/login" element={<Login />}></Route>
-        <Route path="/familytree" element={<FamilyTreePage />} />
+        <Route path="/familytree" element={<FamilyDashboard />} />
       </Routes>
     </BrowserRouter>
   )
