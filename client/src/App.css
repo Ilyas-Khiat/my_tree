@@ -1,0 +1,89 @@
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container styles */
+.sign-up-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 400px;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+/* Form styles */
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form heading */
+.sign-up-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* Label styles */
+.sign-up-form label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Input styles */
+.sign-up-form input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.sign-up-form input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Button styles */
+.sign-up-form button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign-up-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Link styles */
+.sign-up-form p {
+  text-align: center;
+  color: #555;
+}
+
+.sign-up-form a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sign-up-form a:hover {
+  color: #0056b3;
+}

@@ -1,10 +1,11 @@
-// Description: Main server file for MyTree API
-// Used by: Dockerfile, docker-compose.yml
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import usersRoute from './routes/users.js';
+import router from './routes/tree.js';
+import cors from 'cors';
 import 'dotenv/config';
 
 
@@ -13,6 +14,7 @@ const port = process.env.PORT ;
 const mongodbUrl = process.env.MONGODB_URI;
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 // Swagger setup
@@ -41,7 +43,8 @@ mongoose.connect(mongodbUrl, {
   .catch(err => console.log(err));
 
 
-//app.use('/users', usersRoute);
+app.use('/users', usersRoute);
+app.use('/tree', router);
 
 // Start server
 app.listen(port, () => {

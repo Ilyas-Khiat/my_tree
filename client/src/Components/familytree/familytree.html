@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!--
+    collapsible directed acyclical graph for family tree visualization
+    author: Benjamin W. Portner
+    license: GNU General Public License v3.0
+
+    based on d3 collapsible treemap example by d3noob: https://bl.ocks.org/d3noob/43a860bc0024792f8803bba8ca0d5ecd
+    features in the original:
+    - d3 tree
+    - collapsible
+    - transitions
+    new features:
+    - two types of nodes: unions and persons
+    - d3 dag instead of tree (to allow two parents per union)
+    - collapse/expand in all directions (memory function)
+    - tooltips: show node metadata on hover
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="context-menu" class="context-menu" >
+        <ul>
+            <li id="add-relation">Add Relation</li>
+            <li id="add-parent">Add Parent</li>
+        </ul>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/d3-dag.js"></script>
+    <script src="data/data_simple.js"></script>
+    <script src="js/familytree.js"></script>
+    <script>
+        // insert svg object to hold the family tree
+        const svg = d3.select("body").append("svg")
+            .attr("width", document.body.offsetWidth)
+            .attr("height", document.documentElement.clientHeight);
+
+        // make family tree object
+        let FT = new FamilyTree(data, svg);
+
+        // draw family tree
+        FT.draw();
+
+        document.addEventListener("DOMContentLoaded", function() {
+        d3.selectAll('.node') // Ensure this matches your actual nodes
+        .on("contextmenu", function(event, d) {
+            event.preventDefault();
+            console.log(d);
+            // Access the ID of the clicked node
+            const nodeId = d.data.id;
+            console.log("Clicked node ID:", nodeId); // For debugging purposes
+
+            d3.select('#context-menu')
+                .style('display', 'block')
+                .style('left', `${event.pageX}px`)
+                .style('top', `${event.pageY}px`);
+
+            // Logic for your context menu actions
+        });
+
+        // Hide the custom context menu when clicking anywhere in the body
+        d3.select('body').on('click', function() {
+            if (d3.select('#context-menu').style('display') === 'block') {
+                d3.select('#context-menu').style('display', 'none');
+            }
+        });
+    });
+    </script>
+
+</body>
