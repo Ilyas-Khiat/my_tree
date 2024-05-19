@@ -15,7 +15,7 @@ To get the frontend application running:
 
 # Backend Folder Overview
 
-This document provides an overview of the `backend` folder, summarizing its structure, key components, and functionalities. The `backend` folder contains the server-side codebase, responsible for handling requests from the frontend, processing data, and interacting with databases or other services.
+This document provides an overview of the `serveur` folder, summarizing its structure, key components, and functionalities. The `serveur` folder contains the server-side codebase, responsible for handling requests from the frontend, processing data, and interacting with databases or other services.
 
 ## Structure
 
@@ -30,11 +30,10 @@ The `backend` folder is organized into several key directories and files, each s
 To get the backend application up and running:
 
 1. Ensure you have Node.js and a database (as per your project's requirements) installed.
-2. Navigate to the `backend` folder in your terminal.
+2. Navigate to the `serveur` folder in your terminal.
 3. Run `npm install` to install the necessary dependencies.
-4. Set up your environment variables as required in the `config/` directory.
-5. Start the server with `npm start` or `node server.js`.
-6. The server should now be running and accessible for API requests.
+4. Start the server with `npm run dev`.
+5. The server should now be running and accessible for API requests.
 
 ## Team Contributions
 
@@ -47,7 +46,7 @@ The development of this project was a collaborative effort between team members,
 
 ### Backend Contributions
 
-- **YASSINE OULED EL BAKRI**: Developed the API endpoints in for Authentification, defining the logic for handling requests and responses, and integrated middleware for authentication and error handling.
+- **YASSINE OULED EL BAKRI**:Led the server setup and environment configuration, Developed the API endpoints for Authentification, defining the logic for handling requests and responses, and integrated middleware for authentication and error handling.
 - **ILYAS KHIAT**: Developed the API endpoints for the tree model.
 
 ## Collaboration Tools
