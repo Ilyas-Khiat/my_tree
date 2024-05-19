@@ -1,0 +1,11 @@
+.flex-container {
+    margin-left: 50px;
+}
+.family-tree-container {
+    border: 2px solid #e0e0e0; /* Pleasant light grey border */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    background-color: #f9f9f9; /* Light background color for contrast */
+}

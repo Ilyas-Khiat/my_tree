@@ -45,6 +45,34 @@ const data = {
 
 const baseUrl = 'http://localhost:5000/tree';
 
+// Supprimer les personnes
+const deletePersons = async () => {
+    try {
+        await axios.delete(`${baseUrl}/persons`);
+        console.log('All persons deleted');
+    } catch (error) {
+        console.error('Error deleting persons:', error);
+    }
+};
+
+// Supprimer les unions
+const deleteUnions = async () => {
+    try {
+        await axios.delete(`${baseUrl}/unions`);
+        console.log('All unions deleted');
+    } catch (error) {
+        console.error('Error deleting unions:', error);
+    }
+};
+
+// Exécuter les suppressions
+const deleteData = async () => {
+    await deletePersons();
+    await deleteUnions();
+};
+
+deleteData();
+
 // Ajouter les personnes
 const addPersons = async () => {
   for (const personId in data.persons) {

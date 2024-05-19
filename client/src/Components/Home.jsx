@@ -7,14 +7,14 @@ const Home = () => {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100vh',
+    height: '50vh',
     color: '#333',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#fcd219',
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
   };
 
   const headingStyle = {
-    color: '#222',
+    color: '#f0f0f0',
     fontSize: '2.5rem',
   };
 

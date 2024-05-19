@@ -4,20 +4,27 @@ import { Navigate } from 'react-router-dom'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
 import Home from './Components/Home'
-import FamilyDashboard from './Components/FAMILY_DASHBOARD'
+import FamilyDashboard from './Components/familytree/FAMILY_DASHBOARD'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+
 
 
 function App() {
   return (
-<BrowserRouter>
+    <>
+    <ToastContainer />
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/home' element={<Home />}></Route>
         <Route path = "/signup" element={<Signup />}></Route>
         <Route path = "/login" element={<Login />}></Route>
-        <Route path="/familytree" element={<FamilyDashboard />} />
+        <Route path="/familytree" element={<FamilyDashboard  />} />
       </Routes>
     </BrowserRouter>
+    </>
+
   )
 }
 

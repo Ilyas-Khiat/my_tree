@@ -37,6 +37,16 @@ router.delete('/persons/:id', async (req, res) => {
   }
 });
 
+// Delete all persons
+router.delete('/persons', async (req, res) => {
+  try {
+    await Person.deleteMany();
+    res.json({ message: 'All persons deleted' });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
 // Add a new union
 router.post('/unions', async (req, res) => {
   try {
@@ -65,6 +75,16 @@ router.delete('/unions/:id', async (req, res) => {
     const union = await Union.findOneAndDelete({ id: req.params.id });
     if (!union) return res.status(404).json({ message: 'Union not found' });
     res.json({ message: 'Union deleted' });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Delete all unions
+router.delete('/unions', async (req, res) => {
+  try {
+    await Union.deleteMany();
+    res.json({ message: 'All unions deleted' });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

@@ -20,6 +20,7 @@ const Login = () => {
       console.log(response.data); // Log the response data to check its structure
       if (response.status) {
         setMessage("Login successful!");
+        localStorage.setItem("token", response.data.token);
         navigate('/familytree');
       } else {
         setMessage("Login failed. Please check your credentials.");
